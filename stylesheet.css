@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
     width: 100vw;
     height: 100vh;
@@ -6,7 +8,33 @@ body {
     align-items: center;
 }
 .container {
+    width: 25vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(114, 114, 160);
+}
+
+div {
     border: 1px solid black;
-    width: 20vw;
-    height: 50vh;
+}
+
+.display {
+    background-color: rgb(213, 223, 210);
+    text-align: right;
+    word-break: break-all;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 25px;
+    margin: 7px auto 7px auto;
+    padding: 5px;
+    width: 95%;
+    height: 15%;
+}
+
+.buttonContainer {
+    width: 95%;
+    height: 95%;
+    margin: 0 auto 7px auto;
+    padding: 5px;
+    background-color: white;
 }
