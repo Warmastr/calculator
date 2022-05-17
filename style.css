@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 20vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(114, 114, 160);
+}
+
+div {
+    border: 1px solid black;
+}
+
+.display {
+    background-color: rgb(213, 223, 210);
+    text-align: right;
+    word-break: break-all;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 25px;
+    margin: 7px auto 7px auto;
+    padding: 5px;
+    width: 95%;
+    height: 25%;
+}
+
+.buttonContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-template-rows: repeat(5, 1fr);
+    width: 95%;
+    height: 95%;
+    margin: 0 auto 7px auto;
+    padding: 5px;
+    background-color: white;
+}
+
+.clear {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    color: rgb(219, 37, 37);    
+}
+
+.parentheses {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    color: green;
+}
+
+.percent {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    color: green;
+}
+
+.divide {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    color: green;
+}
+
+.seven {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.eight {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.nine {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.multiply {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    color: green;
+}
+
+.four {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.five {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.six {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.minus {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    color: green;
+}
+
+.one {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.two {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.three {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.plus {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    color: green;
+}
+
+.plusMinus {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.zero {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.point {
+    border-radius: 50%;
+    background-color: rgb(247, 243, 243);
+    border: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.equals {
+    border-radius: 50%;
+    
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    color: white;
+    background-color: green;
+}
