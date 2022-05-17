@@ -55,7 +55,7 @@ div {
     color: rgb(219, 37, 37);    
 }
 
-.parentheses {
+.square {
     border-radius: 50%;
     background-color: rgb(247, 243, 243);
     border: none;
@@ -226,7 +226,7 @@ div {
     color: green;
 }
 
-.plusMinus {
+.factorial {
     border-radius: 50%;
     background-color: rgb(247, 243, 243);
     border: none;
@@ -235,6 +235,7 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 45px;
+    color: green;
 }
 
 .zero {
