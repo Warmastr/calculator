@@ -79,7 +79,7 @@ div {
     color: green;
 }
 
-.divide {
+.divided {
     border-radius: 50%;
     background-color: rgb(247, 243, 243);
     border: none;
@@ -124,7 +124,7 @@ div {
     font-size: 45px;
 }
 
-.multiply {
+.times {
     border-radius: 50%;
     background-color: rgb(247, 243, 243);
     border: none;
