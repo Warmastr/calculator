@@ -131,7 +131,11 @@ If there are two numbers (numSplit[0] and numSplit[1]), then add(numSplit[0], nu
 
 plusMinus.addEventListener ('click', () => {
     let old = display.textContent;
-    display.textContent = '-' + old;
+    if (old.includes('-')) {
+        display.textContent = old.replace('-', '');
+    } else {
+        display.textContent = '-' + old;
+    }
 });
 
 point.addEventListener ('click', () => {
