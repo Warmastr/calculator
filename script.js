@@ -1,8 +1,10 @@
 /* When using a calculator, the user inputs a number, then selects an operator, then another number and then presses the equals button to return a result. My job will be to capture the numbers the user entered and store the result as a variable. If an operator is pressed, whatever the user entered before that is the first number, then when the equals sign is pressed, whatever numbers the user entered prior to that is the second number*/
 
 let result = 0;
-let nums = [];
-let operator = [];
+let numPlaceholder = '';
+let numbers = [];
+let operators = [];
+const display2 = document.querySelector('.display2');
 const display = document.querySelector('.display');
 const one = document.querySelector('.one');
 const two = document.querySelector('.two');
@@ -24,9 +26,6 @@ const minus = document.querySelector('.minus');
 const fact = document.querySelector('.factorial');
 const point = document.querySelector('.point');
 const equals = document.querySelector('.equals');
-
-plus.addEventListener('click', () => {
-});
 
 clear.addEventListener('click', () => {
     display.textContent = '';
@@ -122,24 +121,37 @@ const percentage = function(num1) {
     return num1 / 100;
 }
 
+minus.addEventListener ('click', () => {
+});
+
+/* 
+when the user clicks an operator, if an operation has already been performed, the result of that operation needs to be displayed and the addition operator sign needs to be concatenated to the result of previous operation. If an operation has not been performed (numSplit.length === 0), then this is the first operation to be calculated and the display needs to store the first index
+If there are two numbers (numSplit[0] and numSplit[1]), then add(numSplit[0], numSplit[1]) and display the result to display2, and then replace numSplit[0] with the result.
+*/
 plus.addEventListener ('click', () => {
-    nums.push(parseInt(display.textContent));
-    display.textContent += '+';
-    nums.push('+');
-    console.log(nums[0]);
-    console.log(nums[1]);
-    operator.push(add());
-    console.log(operator[0]);
+    numbers.push(parseInt(display.textContent));
+    /* display2.textContent += numbers[0] + ' + '; */
+    display.textContent = '';
+    operators.push('+');
+    
 });
 
 const operate = function(operator, num1, num2) {
+    num1 = parseInt(numbers[0]);
+    num2 = parseInt(numbers[1]);
+    operator = operators[0];
+
+    if (operator === '+') {
+        add(num1, num2);
+        display.textContent = parseInt(result);
+    }
     
+    return result;
 }
 
 equals.addEventListener('click', () => {
-    
-    display.textContent += nums[0,1];
+    numbers.push(display.textContent);
+    /* display2.textContent += numbers[1]; */
+    console.log(numbers[0]);
+    operate();
 });
-
-/* user enters first number to add, user presses the "plus" sign, number is stored to 'num1', display is cleared and '+' sign is highlighted, and the user then enters the next number to add, then presses 'equals'. When the user presses equals, the number the user entered is stored to 'num2' and the add() function is called with num1 and num2 as parameters. */
-

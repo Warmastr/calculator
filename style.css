@@ -6,6 +6,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(9, 9, 36);
 }
 .container {
     width: 20vw;
@@ -25,10 +26,26 @@ div {
     word-break: break-all;
     font-family: 'Press Start 2P', cursive;
     font-size: 25px;
-    margin: 7px auto 7px auto;
+    margin: 7px auto 0 auto;
     padding: 5px;
-    width: 95%;
-    height: 25%;
+    width: 19vw;
+    height: 7vh;
+
+    font-weight: bold;
+    border-bottom: none;
+}
+
+.display2 {
+    background-color: rgb(213, 223, 210);
+    text-align: right;
+    word-break: break-all;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    margin: 0 auto 7px auto;
+    padding: 5px;
+    width: 19vw;
+    height: 3vh;
+    border-top: none;
 }
 
 .buttonContainer {
@@ -36,8 +53,8 @@ div {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     grid-template-rows: repeat(5, 1fr);
-    width: 95%;
-    height: 95%;
+    width: 19vw;
+    height: 60vh;
     margin: 0 auto 7px auto;
     padding: 5px;
     background-color: white;
@@ -262,7 +279,7 @@ div {
 
 .equals {
     border-radius: 50%;
-    
+    border: none;
     text-align: center;
     display: flex;
     align-items: center;
