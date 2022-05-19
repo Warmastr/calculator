@@ -69,10 +69,11 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 45px;
+    font-weight: bold;
     color: rgb(219, 37, 37);    
 }
 
-.square {
+.plusMinus {
     border-radius: 50%;
     background-color: rgb(247, 243, 243);
     border: none;
@@ -81,6 +82,7 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 45px;
+    font-weight: bold;
     color: green;
 }
 
@@ -93,6 +95,7 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 45px;
+    font-weight: bold;
     color: green;
 }
 
@@ -105,6 +108,7 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 45px;
+    font-weight: bold;
     color: green;
 }
 
@@ -195,6 +199,7 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 45px;
+    font-weight: bold;
     color: green;
 }
 
@@ -240,6 +245,7 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 45px;
+    font-weight: bold;
     color: green;
 }
 
@@ -252,6 +258,7 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 45px;
+    font-weight: bold;
     color: green;
 }
 
@@ -274,6 +281,7 @@ div {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
     font-size: 45px;
 }
 
@@ -285,6 +293,7 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 45px;
+    font-weight: bold;
     color: white;
     background-color: green;
 }
