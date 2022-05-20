@@ -30,6 +30,7 @@ const equals = document.querySelector('.equals');
 
 clear.addEventListener('click', () => {
     display.textContent = '';
+    display2.textContent = '';
     operators = [];
     numbers = [];
 });
@@ -141,59 +142,89 @@ plusMinus.addEventListener ('click', () => {
 point.addEventListener ('click', () => {
     display.textContent += '.';
 });
-
+// if the numbers array has more than one element, then an operation has already been performed so, do the math for that operation (operate()) then send the result to the display, clear the array and put the result in the first index.
 plus.addEventListener ('click', () => {
-    // user types a number and presses +, the operators array is cleared and the addition operator is then pushed to the 'operators' array to position it at index 0. Whatever is on the display is then pushed to the numbers array. 
-    numbers.push(display.textContent);
+    // update the operator logic with current operation:
     operators = '+';
-    display.textContent = '';    
+    numbers.push(display.textContent);
+    if (numbers[1] === undefined) {
+        display.textContent = '';
+    } else {
+        operate();
+        display.text = parseInt(result);
+        numbers = [];
+        numbers.push(result);
+    }
 });
 
 minus.addEventListener ('click', () => {
-    numbers.push(display.textContent);
     operators = '-';
-    display.textContent = '';
+    numbers.push(display.textContent);
+    if (numbers[1] === undefined) {
+        display.textContent = '';
+    } else {
+        operate();
+        display.text = parseInt(result);
+        numbers = [];
+        numbers.push(result);
+    }
 });
 
 times.addEventListener ('click', () => {
-    numbers.push(display.textContent);
     operators = '*';
-    display.textContent = '';
+    numbers.push(display.textContent);
+    if (numbers[1] === undefined) {
+        display.textContent = '';
+    } else {
+        operate();
+        display.text = parseInt(result);
+        numbers = [];
+        numbers.push(result);
+    }
 });
 
 divided.addEventListener ('click', () => {
-    numbers.push(display.textContent);
     operators = '/';
-    display.textContent = '';
+    numbers.push(display.textContent);
+    if (numbers[1] === undefined) {
+        display.textContent = '';
+    } else {
+        operate();
+        display.text = parseInt(result);
+        numbers = [];
+        numbers.push(result);
+    }
 });
 
 const operate = function(operator, num1, num2) {
     num1 = Number(numbers[0]);
+    console.log(num1);
     num2 = Number(numbers[1]);
-    operator = operators[0];
+    console.log(num2);
+    operator = operators;
 
     if (operator === '+') {
         add(num1, num2);
         numbers = [];
-        display.textContent = Number(result);
+        display.textContent = result;
     }
 
     if (operator === '-') {
         subtract(num1, num2);
         numbers = [];
-        display.textContent = Number(result);
+        display.textContent = result;
     }
 
     if (operator === '*') {
         multiply(num1, num2);
         numbers = [];
-        display.textContent = Number(result);
+        display.textContent = result;
     }
     
     if (operator === '/') {
         divide(num1, num2);
         numbers = [];
-        display.textContent = Number(result);
+        display.textContent = result;
     }
     return result;
 }
