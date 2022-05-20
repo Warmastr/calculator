@@ -3,7 +3,7 @@
 let result = 0;
 let numPlaceholder = '';
 let numbers = [];
-let operators = [];
+let operators;
 const index = 0;
 const display2 = document.querySelector('.display2');
 const display = document.querySelector('.display');
@@ -143,34 +143,27 @@ point.addEventListener ('click', () => {
 });
 
 plus.addEventListener ('click', () => {
-    operators = [];
-    operators.push('+');
+    // user types a number and presses +, the operators array is cleared and the addition operator is then pushed to the 'operators' array to position it at index 0. Whatever is on the display is then pushed to the numbers array. 
     numbers.push(display.textContent);
-    /* display2.textContent += numbers[0] + ' + '; */
+    operators = '+';
     display.textContent = '';    
 });
 
 minus.addEventListener ('click', () => {
-    operators = [];
-    operators.push('-');
     numbers.push(display.textContent);
-    /* display2.textContent += numbers[0] + ' - '; */
+    operators = '-';
     display.textContent = '';
 });
 
 times.addEventListener ('click', () => {
-    operators = [];
-    operators.push('*');
     numbers.push(display.textContent);
-    /* display2.textContent += numbers[0] + ' * '; */
+    operators = '*';
     display.textContent = '';
 });
 
 divided.addEventListener ('click', () => {
-    operators = [];
-    operators.push('/');
     numbers.push(display.textContent);
-    /* display2.textContent += numbers[0] + ' / '; */
+    operators = '/';
     display.textContent = '';
 });
 
@@ -206,6 +199,7 @@ const operate = function(operator, num1, num2) {
 }
 
 equals.addEventListener('click', () => {
+    // pushes what is on the display to index 1 of the numbers array.
     numbers.push(display.textContent);
     /* display2.textContent += numbers[1]; */
     operate();
