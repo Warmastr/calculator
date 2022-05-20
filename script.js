@@ -1,9 +1,10 @@
-/* When using a calculator, the user inputs a number, then selects an operator, then another number and then presses the equals button to return a result. My job will be to capture the numbers the user entered and store the result as a variable. If an operator is pressed, whatever the user entered before that is the first number, then when the equals sign is pressed, whatever numbers the user entered prior to that is the second number*/
+/* When using a calculator, the user inputs a number, then selects an operators, then another number and then presses the equals button to return a result. My job will be to capture the numbers the user entered and store the result as a variable. If an operators is pressed, whatever the user entered before that is the first number, then when the equals sign is pressed, whatever numbers the user entered prior to that is the second number*/
 
-let result = 0;
+let result;
 let numPlaceholder = '';
 let numbers = [];
-let operators;
+let operators = [];
+let secondNumber;
 const index = 0;
 const display2 = document.querySelector('.display2');
 const display = document.querySelector('.display');
@@ -33,6 +34,7 @@ clear.addEventListener('click', () => {
     display2.textContent = '';
     operators = [];
     numbers = [];
+    result = 0;
 });
 one.addEventListener('click', () => {
     display.textContent += '1';
@@ -97,15 +99,6 @@ const divide = function(numerator, denominator) {
     return result;
 };
 
-const power = function(num, pwr) {
-    result = 1;
-	// num needs to be multiplied by itself pwr times
-    for (let i = 0; i < pwr; i++) {
-      result = result * num;
-    }
-    return result;
-};
-
 const factorial = function(n) {
 	result = n;
     if (n === 0 || n === 1) {
@@ -125,11 +118,6 @@ const percentage = function(num1) {
     return num1 / 100;
 }
 
-/* 
-when the user clicks an operator, if an operation has already been performed, the result of that operation needs to be displayed and the addition operator sign needs to be concatenated to the result of previous operation. If an operation has not been performed (numSplit.length === 0), then this is the first operation to be calculated and the display needs to store the first index
-If there are two numbers (numSplit[0] and numSplit[1]), then add(numSplit[0], numSplit[1]) and display the result to display2, and then replace numSplit[0] with the result.
-*/
-
 plusMinus.addEventListener ('click', () => {
     let old = display.textContent;
     if (old.includes('-')) {
@@ -142,57 +130,84 @@ plusMinus.addEventListener ('click', () => {
 point.addEventListener ('click', () => {
     display.textContent += '.';
 });
-// if the numbers array has more than one element, then an operation has already been performed so, do the math for that operation (operate()) then send the result to the display, clear the array and put the result in the first index.
+
 plus.addEventListener ('click', () => {
-    // update the operator logic with current operation:
-    operators = '+';
     numbers.push(display.textContent);
-    if (numbers[1] === undefined) {
-        display.textContent = '';
+    if (operators[1] !== undefined) {
+        operators[0] = operators[1];
     } else {
+        operators.push('+');
+    }
+    display.textContent = '';
+    display2.textContent = numbers[0] + operators[0];
+    if (numbers[1] !== undefined) {
+        secondNumber = numbers[1];
         operate();
-        display.text = parseInt(result);
-        numbers = [];
-        numbers.push(result);
+        numbers[0] = result;
+        display.textContent = numbers[0];
+        display2.textContent += secondNumber + '=';
+        display2.textContent += numbers[0];
+        display.textContent = '';
     }
 });
 
 minus.addEventListener ('click', () => {
-    operators = '-';
     numbers.push(display.textContent);
-    if (numbers[1] === undefined) {
-        display.textContent = '';
+    if (operators[1] !== undefined) {
+        operators[0] = operators[1];
     } else {
+        operators.push('-');
+    }
+    display.textContent = '';
+    display2.textContent = numbers[0] + operators[0];
+    if (numbers[1] !== undefined) {
+        secondNumber = numbers[1];
         operate();
-        display.text = parseInt(result);
-        numbers = [];
-        numbers.push(result);
+        numbers[0] = result;
+        display.textContent = numbers[0];
+        display2.textContent += secondNumber + '=';
+        display2.textContent += numbers[0];
+        display.textContent = '';
     }
 });
 
 times.addEventListener ('click', () => {
-    operators = '*';
     numbers.push(display.textContent);
-    if (numbers[1] === undefined) {
-        display.textContent = '';
+    if (operators[1] !== undefined) {
+        operators[0] = operators[1];
     } else {
+        operators.push('*');
+    }
+    display.textContent = '';
+    display2.textContent = numbers[0] + operators[0];
+    if (numbers[1] !== undefined) {
+        secondNumber = numbers[1];
         operate();
-        display.text = parseInt(result);
-        numbers = [];
-        numbers.push(result);
+        numbers[0] = result;
+        display.textContent = numbers[0];
+        display2.textContent += secondNumber + '=';
+        display2.textContent += numbers[0];
+        display.textContent = '';
     }
 });
 
 divided.addEventListener ('click', () => {
-    operators = '/';
     numbers.push(display.textContent);
-    if (numbers[1] === undefined) {
-        display.textContent = '';
+    if (operators[1] !== undefined) {
+        operators[0] = operators[1];
     } else {
+        operators.push('/');
+    }
+    display.textContent = '';
+    display2.textContent = numbers[0] + operators[0];
+    if (numbers[1] !== undefined) {
+        secondNumber = numbers[1];
         operate();
-        display.text = parseInt(result);
-        numbers = [];
-        numbers.push(result);
+        numbers[0] = result;
+        display.textContent = numbers[0];
+        display2.textContent += secondNumber + '=';
+        display2.textContent += numbers[0];
+        display.textContent = '';
     }
 });
 
@@ -201,7 +216,8 @@ const operate = function(operator, num1, num2) {
     console.log(num1);
     num2 = Number(numbers[1]);
     console.log(num2);
-    operator = operators;
+    operator = operators[0];
+    operators[0] = operators[1];
 
     if (operator === '+') {
         add(num1, num2);
@@ -230,8 +246,7 @@ const operate = function(operator, num1, num2) {
 }
 
 equals.addEventListener('click', () => {
-    // pushes what is on the display to index 1 of the numbers array.
+    
     numbers.push(display.textContent);
-    /* display2.textContent += numbers[1]; */
     operate();
 });
