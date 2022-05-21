@@ -303,3 +303,14 @@ div {
     text-align: center;
     background-color: rgb(105, 167, 248);
 }
+
+.delete {
+    width: 19.5vw;
+    margin: auto auto 7px auto;
+    background-color: rgb(247, 243, 243);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}

@@ -4,7 +4,7 @@ let currentOperator;
 let previousOperator;
 let secondNumber;
 let prevNum;
-const index = 0;
+const del = document.querySelector('.delete');
 const display2 = document.querySelector('.display2');
 const display = document.querySelector('.display');
 const one = document.querySelector('.one');
@@ -38,7 +38,94 @@ clear.addEventListener('click', () => {
     numbers = [];
     result = 0;
 });
-one.addEventListener('click', () => {
+
+document.addEventListener('keydown', event => {
+    if (event.code === 'Digit1' || event.code === 'Numpad1') {
+        display.textContent += '1';
+    }
+
+    if (event.code === 'Digit2' || event.code === 'Numpad2') {
+        display.textContent += '2';
+    }
+
+    if (event.code === 'Digit3' || event.code === 'Numpad3') {
+        display.textContent += '3';
+    }
+
+    if (event.code === 'Digit4' || event.code === 'Numpad4') {
+        display.textContent += '4';
+    }
+
+    if (event.code === 'Digit5' || event.code === 'Numpad5') {
+        display.textContent += '5';
+    }
+
+    if (event.code === 'Digit6' || event.code === 'Numpad6') {
+        display.textContent += '6';
+    }
+
+    if (event.code === 'Digit7' || event.code === 'Numpad7') {
+        display.textContent += '7';
+    }
+
+    if (event.code === 'Digit8' || event.code === 'Numpad8') {
+        display.textContent += '8';
+    }
+
+    if (event.code === 'Digit9' || event.code === 'Numpad9') {
+        display.textContent += '9';
+    }
+
+    if (event.code === 'Digit0' || event.code === 'Numpad0') {
+        display.textContent += '0';
+    }
+
+    if (event.code === 'Minus' || event.code === 'NumpadSubtract') {
+        display.textContent += '-';
+    }
+    if (event.code === 'Add' || event.code === 'NumpadAdd') {
+        display.textContent += '+';
+    }
+
+    if (event.code === 'Multiply' || event.code === 'NumpadMultiply') {
+        display.textContent += '*';
+    }
+
+    if (event.code === 'Divide' || event.code === 'NumpadDivide') {
+        display.textContent += '/';
+    }
+
+    if (event.code === 'Escape') {
+        display.textContent = '';
+        display2.textContent = '';
+        previousOperator = '';
+        currentOperator = '';
+        secondNumber = '';
+        prevNum = '';
+        numbers = [];
+        result = 0;
+    }
+
+    if (event.code === 'Equal') {
+        numbers.push(Number(display.textContent));
+        secondNumber = numbers[1];
+        previousOperator = currentOperator;
+        operate();
+        display2.textContent = roundAccurately(Number(prevNum), 5) + currentOperator;
+        display2.textContent += roundAccurately(Number(secondNumber), 5) + '=';
+        display2.textContent += roundAccurately(Number(result), 5);
+    }
+
+    if (event.code === 'Digit5' && ('ShiftLeft' || 'ShiftRight')) {
+        display.textContent = '%';
+    }
+
+    if (event.code === 'Period' || 'NumpadDecimal') {
+        display.textContent = '.';
+    }
+});
+
+one.addEventListener('click', () => {1
     display.textContent += '1';
 });
 
@@ -122,6 +209,16 @@ const percentage = function(num1) {
     return num1 / 100;
 }
 
+del.addEventListener ('click', () => {
+    
+});
+
+str = 'AppDividend';
+console.log('Original String:', str);
+
+newStr = str.substr(1, str.length);
+console.log('After removing the first character:', newStr);
+
 plusMinus.addEventListener ('click', () => {
     let old = display.textContent;
     if (old.includes('-')) {
@@ -131,8 +228,13 @@ plusMinus.addEventListener ('click', () => {
     }
 });
 
-point.addEventListener ('click', () => {
-    display.textContent += '.';
+point.addEventListener ('click', (e) => {
+    let has = display.textContent;
+    if (has.includes('.')) {
+        e.preventDefault();
+    } else {
+        display.textContent += '.';
+    }
 });
 
 const checkCalculation = function(e) {
