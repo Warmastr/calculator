@@ -135,12 +135,13 @@ point.addEventListener ('click', () => {
     display.textContent += '.';
 });
 
-plus.addEventListener ('click', () => {
-    numbers.push(Number(display.textContent));    
+const checkCalculation = function(e) {
+    selectedOperator = e.target.textContent;
+    numbers.push(Number(display.textContent));
     display.textContent = '';
     if (numbers[1] !== undefined) {
         previousOperator = currentOperator;
-        currentOperator = '+';
+        currentOperator = selectedOperator;
         secondNumber = numbers[1];
         operate();
         display2.textContent = roundAccurately(Number(prevNum), 5) + previousOperator;
@@ -150,74 +151,16 @@ plus.addEventListener ('click', () => {
         display2.textContent += numbers[0];
         display.textContent = '';
     } else {
-        currentOperator = '+';
+        currentOperator = selectedOperator;
         previousOperator = currentOperator;
         display2.textContent = numbers[0] + currentOperator;
     }
-});
+}
 
-minus.addEventListener ('click', () => {
-    numbers.push(Number(display.textContent));    
-    display.textContent = '';
-    if (numbers[1] !== undefined) {
-        previousOperator = currentOperator;
-        currentOperator = '-';
-        secondNumber = numbers[1];
-        operate();
-        display2.textContent = roundAccurately(Number(prevNum), 5) + previousOperator;
-        numbers[0] = roundAccurately(Number(result), 5);
-        display.textContent = numbers[0];
-        display2.textContent += roundAccurately(Number(secondNumber), 5) + '=';
-        display2.textContent += numbers[0];
-        display.textContent = '';
-    } else {
-        currentOperator = '-';
-        previousOperator = currentOperator;
-        display2.textContent = numbers[0] + currentOperator;
-    }
-});
-
-times.addEventListener ('click', () => {
-    numbers.push(Number(display.textContent));    
-    display.textContent = '';
-    if (numbers[1] !== undefined) {
-        previousOperator = currentOperator;
-        currentOperator = '*';
-        secondNumber = numbers[1];
-        operate();
-        display2.textContent = roundAccurately(Number(prevNum), 5) + previousOperator;
-        numbers[0] = roundAccurately(Number(result), 5);
-        display.textContent = numbers[0];
-        display2.textContent += roundAccurately(Number(secondNumber), 5) + '=';
-        display2.textContent += numbers[0];
-        display.textContent = '';
-    } else {
-        currentOperator = '*';
-        previousOperator = currentOperator;
-        display2.textContent = numbers[0] + currentOperator;
-    }
-});
-
-divided.addEventListener ('click', () => {
-    numbers.push(Number(display.textContent));    
-    display.textContent = '';
-    if (numbers[1] !== undefined) {
-        previousOperator = currentOperator;
-        currentOperator = '/';
-        secondNumber = numbers[1];
-        operate();
-        display2.textContent = roundAccurately(Number(prevNum), 5) + previousOperator;
-        numbers[0] = roundAccurately(Number(result), 5);
-        display.textContent = numbers[0];
-        display2.textContent += roundAccurately(Number(secondNumber), 5) + '=';
-        display2.textContent += numbers[0];
-        display.textContent = '';
-    } else {
-        currentOperator = '/';
-        previousOperator = currentOperator;
-        display2.textContent = numbers[0] + currentOperator;
-    }
-});
+plus.addEventListener('click', checkCalculation);
+minus.addEventListener('click', checkCalculation);
+times.addEventListener('click', checkCalculation);
+divided.addEventListener('click', checkCalculation);
 
 const operate = function(operator, num1, num2) {
     num1 = Number(numbers[0]);
