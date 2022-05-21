@@ -4,6 +4,7 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgb(9, 9, 36);
@@ -30,7 +31,6 @@ div {
     padding: 5px;
     width: 19vw;
     height: 7vh;
-
     font-weight: bold;
     border-bottom: none;
 }
@@ -296,4 +296,10 @@ div {
     font-weight: bold;
     color: white;
     background-color: green;
+}
+
+.footer {
+    width: 20vw;
+    text-align: center;
+    background-color: rgb(105, 167, 248);
 }

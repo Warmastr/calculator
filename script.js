@@ -1,10 +1,10 @@
-/* When using a calculator, the user inputs a number, then selects an operators, then another number and then presses the equals button to return a result. My job will be to capture the numbers the user entered and store the result as a variable. If an operators is pressed, whatever the user entered before that is the first number, then when the equals sign is pressed, whatever numbers the user entered prior to that is the second number*/
-
 let result;
 let numPlaceholder = '';
 let numbers = [];
-let operators = [];
+let currentOperator;
+let previousOperator;
 let secondNumber;
+let prevNum;
 const index = 0;
 const display2 = document.querySelector('.display2');
 const display = document.querySelector('.display');
@@ -32,7 +32,10 @@ const equals = document.querySelector('.equals');
 clear.addEventListener('click', () => {
     display.textContent = '';
     display2.textContent = '';
-    operators = [];
+    previousOperator = '';
+    currentOperator = '';
+    secondNumber = '';
+    prevNum = '';
     numbers = [];
     result = 0;
 });
@@ -132,113 +135,118 @@ point.addEventListener ('click', () => {
 });
 
 plus.addEventListener ('click', () => {
-    numbers.push(display.textContent);
-    if (operators[1] !== undefined) {
-        operators[0] = operators[1];
-    } else {
-        operators.push('+');
-    }
+    numbers.push(Number(display.textContent));    
     display.textContent = '';
-    display2.textContent = numbers[0] + operators[0];
     if (numbers[1] !== undefined) {
+        previousOperator = currentOperator;
+        currentOperator = '+';
         secondNumber = numbers[1];
         operate();
+        display2.textContent = prevNum + previousOperator;
         numbers[0] = result;
         display.textContent = numbers[0];
         display2.textContent += secondNumber + '=';
         display2.textContent += numbers[0];
         display.textContent = '';
+    } else {
+        currentOperator = '+';
+        previousOperator = currentOperator;
+        display2.textContent = numbers[0] + currentOperator;
     }
 });
 
 minus.addEventListener ('click', () => {
-    numbers.push(display.textContent);
-    if (operators[1] !== undefined) {
-        operators[0] = operators[1];
-    } else {
-        operators.push('-');
-    }
+    numbers.push(Number(display.textContent));    
     display.textContent = '';
-    display2.textContent = numbers[0] + operators[0];
     if (numbers[1] !== undefined) {
+        previousOperator = currentOperator;
+        currentOperator = '-';
         secondNumber = numbers[1];
         operate();
+        display2.textContent = prevNum + previousOperator;
         numbers[0] = result;
         display.textContent = numbers[0];
         display2.textContent += secondNumber + '=';
         display2.textContent += numbers[0];
         display.textContent = '';
+    } else {
+        currentOperator = '-';
+        previousOperator = currentOperator;
+        display2.textContent = numbers[0] + currentOperator;
     }
 });
 
 times.addEventListener ('click', () => {
-    numbers.push(display.textContent);
-    if (operators[1] !== undefined) {
-        operators[0] = operators[1];
-    } else {
-        operators.push('*');
-    }
+    numbers.push(Number(display.textContent));    
     display.textContent = '';
-    display2.textContent = numbers[0] + operators[0];
     if (numbers[1] !== undefined) {
+        previousOperator = currentOperator;
+        currentOperator = '*';
         secondNumber = numbers[1];
         operate();
+        display2.textContent = prevNum + previousOperator;
         numbers[0] = result;
         display.textContent = numbers[0];
         display2.textContent += secondNumber + '=';
         display2.textContent += numbers[0];
         display.textContent = '';
+    } else {
+        currentOperator = '*';
+        previousOperator = currentOperator;
+        display2.textContent = numbers[0] + currentOperator;
     }
 });
 
 divided.addEventListener ('click', () => {
-    numbers.push(display.textContent);
-    if (operators[1] !== undefined) {
-        operators[0] = operators[1];
-    } else {
-        operators.push('/');
-    }
+    numbers.push(Number(display.textContent));    
     display.textContent = '';
-    display2.textContent = numbers[0] + operators[0];
     if (numbers[1] !== undefined) {
+        previousOperator = currentOperator;
+        currentOperator = '/';
         secondNumber = numbers[1];
         operate();
+        display2.textContent = prevNum + previousOperator;
         numbers[0] = result;
         display.textContent = numbers[0];
         display2.textContent += secondNumber + '=';
         display2.textContent += numbers[0];
         display.textContent = '';
+    } else {
+        currentOperator = '/';
+        previousOperator = currentOperator;
+        display2.textContent = numbers[0] + currentOperator;
     }
 });
 
 const operate = function(operator, num1, num2) {
     num1 = Number(numbers[0]);
-    console.log(num1);
     num2 = Number(numbers[1]);
-    console.log(num2);
-    operator = operators[0];
-    operators[0] = operators[1];
+    operator = previousOperator;
 
     if (operator === '+') {
         add(num1, num2);
+        prevNum = numbers[0];
         numbers = [];
         display.textContent = result;
     }
 
     if (operator === '-') {
         subtract(num1, num2);
+        prevNum = numbers[0];
         numbers = [];
         display.textContent = result;
     }
 
     if (operator === '*') {
         multiply(num1, num2);
+        prevNum = numbers[0];
         numbers = [];
         display.textContent = result;
     }
     
     if (operator === '/') {
         divide(num1, num2);
+        prevNum = numbers[0];
         numbers = [];
         display.textContent = result;
     }
@@ -246,7 +254,11 @@ const operate = function(operator, num1, num2) {
 }
 
 equals.addEventListener('click', () => {
-    
-    numbers.push(display.textContent);
+    numbers.push(Number(display.textContent));
+    secondNumber = numbers[1];
+    previousOperator = currentOperator;
     operate();
+    display2.textContent = prevNum + currentOperator;
+    display2.textContent += secondNumber + '=';
+    display2.textContent += result;
 });
