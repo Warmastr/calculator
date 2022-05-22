@@ -73,6 +73,10 @@ div {
     color: rgb(219, 37, 37);    
 }
 
+.clear:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
 .plusMinus {
     border-radius: 50%;
     background-color: rgb(247, 243, 243);
@@ -84,6 +88,10 @@ div {
     font-size: 45px;
     font-weight: bold;
     color: green;
+}
+
+.plusMinus:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .percent {
@@ -99,6 +107,10 @@ div {
     color: green;
 }
 
+.percent:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
 .divided {
     border-radius: 50%;
     background-color: rgb(247, 243, 243);
@@ -112,6 +124,10 @@ div {
     color: green;
 }
 
+.divided:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
 .seven {
     border-radius: 50%;
     background-color: rgb(247, 243, 243);
@@ -121,6 +137,10 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 45px;
+}
+
+.seven:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .eight {
@@ -134,6 +154,10 @@ div {
     font-size: 45px;
 }
 
+.eight:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
 .nine {
     border-radius: 50%;
     background-color: rgb(247, 243, 243);
@@ -143,6 +167,10 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 45px;
+}
+
+.nine:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .times {
@@ -157,6 +185,10 @@ div {
     color: green;
 }
 
+.times:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
 .four {
     border-radius: 50%;
     background-color: rgb(247, 243, 243);
@@ -166,6 +198,10 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 45px;
+}
+
+.four:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .five {
@@ -179,6 +215,10 @@ div {
     font-size: 45px;
 }
 
+.five:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
 .six {
     border-radius: 50%;
     background-color: rgb(247, 243, 243);
@@ -188,6 +228,10 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 45px;
+}
+
+.six:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .minus {
@@ -203,6 +247,10 @@ div {
     color: green;
 }
 
+.minus:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
 .one {
     border-radius: 50%;
     background-color: rgb(247, 243, 243);
@@ -212,6 +260,10 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 45px;
+}
+
+.one:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .two {
@@ -225,6 +277,10 @@ div {
     font-size: 45px;
 }
 
+.two:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
 .three {
     border-radius: 50%;
     background-color: rgb(247, 243, 243);
@@ -234,6 +290,10 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 45px;
+}
+
+.three:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .plus {
@@ -249,6 +309,10 @@ div {
     color: green;
 }
 
+.plus:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
 .factorial {
     border-radius: 50%;
     background-color: rgb(247, 243, 243);
@@ -262,6 +326,10 @@ div {
     color: green;
 }
 
+.factorial:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
 .zero {
     border-radius: 50%;
     background-color: rgb(247, 243, 243);
@@ -271,6 +339,10 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 45px;
+}
+
+.zero:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .point {
@@ -285,6 +357,10 @@ div {
     font-size: 45px;
 }
 
+.point:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
 .equals {
     border-radius: 50%;
     border: none;
@@ -296,6 +372,10 @@ div {
     font-weight: bold;
     color: white;
     background-color: green;
+}
+
+.equals:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .footer {
@@ -313,4 +393,8 @@ div {
     align-items: center;
     justify-content: center;
     font-size: 30px;
+}
+
+.delete:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }

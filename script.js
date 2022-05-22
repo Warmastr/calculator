@@ -4,6 +4,7 @@ let currentOperator;
 let previousOperator;
 let secondNumber;
 let prevNum;
+let pressed = false;
 const del = document.querySelector('.delete');
 const display2 = document.querySelector('.display2');
 const display = document.querySelector('.display');
@@ -37,6 +38,11 @@ clear.addEventListener('click', () => {
     prevNum = '';
     numbers = [];
     result = 0;
+    plus.style.backgroundColor = 'rgb(247, 243, 243)';
+    minus.style.backgroundColor = 'rgb(247, 243, 243)';
+    times.style.backgroundColor = 'rgb(247, 243, 243)';
+    divided.style.backgroundColor = 'rgb(247, 243, 243)';
+    pressed = false;
 });
 
 document.addEventListener('keydown', event => {
@@ -120,49 +126,135 @@ document.addEventListener('keydown', event => {
         display.textContent = '%';
     }
 
-    if (event.code === 'Period' || 'NumpadDecimal') {
+    if (event.code === 'Period') {
         display.textContent = '.';
+    }
+
+    if (event.code === 'Backspace') {
+        let has = display.textContent;
+        has = has.substring(0, has.length-1);
+        display.textContent = has;
     }
 });
 
-one.addEventListener('click', () => {1
+one.addEventListener('click', () => {
+    if (pressed === true) {
+        display.textContent = '';
+        pressed = false;
+    }
     display.textContent += '1';
+    plus.style.backgroundColor = 'rgb(247, 243, 243)';
+    minus.style.backgroundColor = 'rgb(247, 243, 243)';
+    times.style.backgroundColor = 'rgb(247, 243, 243)';
+    divided.style.backgroundColor = 'rgb(247, 243, 243)';
 });
 
 two.addEventListener('click', () => {
+    if (pressed === true) {
+        display.textContent = '';
+        pressed = false;
+    }
     display.textContent += '2';
+    plus.style.backgroundColor = 'rgb(247, 243, 243)';
+    minus.style.backgroundColor = 'rgb(247, 243, 243)';
+    times.style.backgroundColor = 'rgb(247, 243, 243)';
+    divided.style.backgroundColor = 'rgb(247, 243, 243)';
 });
 
 three.addEventListener('click', () => {
+    if (pressed === true) {
+        display.textContent = '';
+        pressed = false;
+    }
     display.textContent += '3';
+    plus.style.backgroundColor = 'rgb(247, 243, 243)';
+    minus.style.backgroundColor = 'rgb(247, 243, 243)';
+    times.style.backgroundColor = 'rgb(247, 243, 243)';
+    divided.style.backgroundColor = 'rgb(247, 243, 243)';
 });
 
 four.addEventListener('click', () => {
+    if (pressed === true) {
+        display.textContent = '';
+        pressed = false;
+    }
     display.textContent += '4';
+    plus.style.backgroundColor = 'rgb(247, 243, 243)';
+    minus.style.backgroundColor = 'rgb(247, 243, 243)';
+    times.style.backgroundColor = 'rgb(247, 243, 243)';
+    divided.style.backgroundColor = 'rgb(247, 243, 243)';
 });
 
 five.addEventListener('click', () => {
+    if (pressed === true) {
+        display.textContent = '';
+        pressed = false;
+    }
     display.textContent += '5';
+    plus.style.backgroundColor = 'rgb(247, 243, 243)';
+    minus.style.backgroundColor = 'rgb(247, 243, 243)';
+    times.style.backgroundColor = 'rgb(247, 243, 243)';
+    divided.style.backgroundColor = 'rgb(247, 243, 243)';
 });
 
 six.addEventListener('click', () => {
+    if (pressed === true) {
+        display.textContent = '';
+        pressed = false;
+    }
     display.textContent += '6';
+    plus.style.backgroundColor = 'rgb(247, 243, 243)';
+    minus.style.backgroundColor = 'rgb(247, 243, 243)';
+    times.style.backgroundColor = 'rgb(247, 243, 243)';
+    divided.style.backgroundColor = 'rgb(247, 243, 243)';
 });
 
 seven.addEventListener('click', () => {
+    if (pressed === true) {
+        display.textContent = '';
+        pressed = false;
+    }
     display.textContent += '7';
+    plus.style.backgroundColor = 'rgb(247, 243, 243)';
+    minus.style.backgroundColor = 'rgb(247, 243, 243)';
+    times.style.backgroundColor = 'rgb(247, 243, 243)';
+    divided.style.backgroundColor = 'rgb(247, 243, 243)';
 });
 
 eight.addEventListener('click', () => {
+    if (pressed === true) {
+        display.textContent = '';
+        pressed = false;
+    }
     display.textContent += '8';
+    plus.style.backgroundColor = 'rgb(247, 243, 243)';
+    minus.style.backgroundColor = 'rgb(247, 243, 243)';
+    times.style.backgroundColor = 'rgb(247, 243, 243)';
+    divided.style.backgroundColor = 'rgb(247, 243, 243)';
 });
 
 nine.addEventListener('click', () => {
+    if (pressed === true) {
+        display.textContent = '';
+        pressed = false;
+    }
     display.textContent += '9';
+    plus.style.backgroundColor = 'rgb(247, 243, 243)';
+    minus.style.backgroundColor = 'rgb(247, 243, 243)';
+    times.style.backgroundColor = 'rgb(247, 243, 243)';
+    divided.style.backgroundColor = 'rgb(247, 243, 243)';
 });
 
 zero.addEventListener('click', () => {
+    if (pressed === true) {
+        display.textContent = '';
+        pressed = false;
+    }
     display.textContent += '0';
+    plus.style.backgroundColor = 'rgb(247, 243, 243)';
+    minus.style.backgroundColor = 'rgb(247, 243, 243)';
+    times.style.backgroundColor = 'rgb(247, 243, 243)';
+    divided.style.backgroundColor = 'rgb(247, 243, 243)';
 });
 
 const add = function(num1, num2) {
@@ -209,15 +301,15 @@ const percentage = function(num1) {
     return num1 / 100;
 }
 
-del.addEventListener ('click', () => {
-    
+del.addEventListener('click', () => {
+    let has = display.textContent;
+    has = has.substring(0, has.length-1);
+    display.textContent = has;
+    plus.style.backgroundColor = 'rgb(247, 243, 243)';
+    minus.style.backgroundColor = 'rgb(247, 243, 243)';
+    times.style.backgroundColor = 'rgb(247, 243, 243)';
+    divided.style.backgroundColor = 'rgb(247, 243, 243)';
 });
-
-str = 'AppDividend';
-console.log('Original String:', str);
-
-newStr = str.substr(1, str.length);
-console.log('After removing the first character:', newStr);
 
 plusMinus.addEventListener ('click', () => {
     let old = display.textContent;
@@ -226,6 +318,10 @@ plusMinus.addEventListener ('click', () => {
     } else {
         display.textContent = '-' + old;
     }
+    plus.style.backgroundColor = 'rgb(247, 243, 243)';
+    minus.style.backgroundColor = 'rgb(247, 243, 243)';
+    times.style.backgroundColor = 'rgb(247, 243, 243)';
+    divided.style.backgroundColor = 'rgb(247, 243, 243)';
 });
 
 point.addEventListener ('click', (e) => {
@@ -235,9 +331,18 @@ point.addEventListener ('click', (e) => {
     } else {
         display.textContent += '.';
     }
+    plus.style.backgroundColor = 'rgb(247, 243, 243)';
+    minus.style.backgroundColor = 'rgb(247, 243, 243)';
+    times.style.backgroundColor = 'rgb(247, 243, 243)';
+    divided.style.backgroundColor = 'rgb(247, 243, 243)';
+    if (pressed === true) {
+        display.textContent = '';
+        pressed = false;
+    }
 });
 
 const checkCalculation = function(e) {
+    e.target.style.backgroundColor = 'orange'
     selectedOperator = e.target.textContent;
     numbers.push(Number(display.textContent));
     display.textContent = '';
@@ -300,6 +405,7 @@ const operate = function(operator, num1, num2) {
 }
 
 equals.addEventListener('click', () => {
+    pressed = true;
     numbers.push(Number(display.textContent));
     secondNumber = numbers[1];
     previousOperator = currentOperator;
@@ -307,4 +413,8 @@ equals.addEventListener('click', () => {
     display2.textContent = roundAccurately(Number(prevNum), 5) + currentOperator;
     display2.textContent += roundAccurately(Number(secondNumber), 5) + '=';
     display2.textContent += roundAccurately(Number(result), 5);
+    plus.style.backgroundColor = 'rgb(247, 243, 243)';
+    minus.style.backgroundColor = 'rgb(247, 243, 243)';
+    times.style.backgroundColor = 'rgb(247, 243, 243)';
+    divided.style.backgroundColor = 'rgb(247, 243, 243)';
 });
