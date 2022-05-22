@@ -137,125 +137,30 @@ document.addEventListener('keydown', event => {
     }
 });
 
-one.addEventListener('click', () => {
-    if (pressed === true) {
-        display.textContent = '';
-        pressed = false;
-    }
-    display.textContent += '1';
-    plus.style.backgroundColor = 'rgb(247, 243, 243)';
-    minus.style.backgroundColor = 'rgb(247, 243, 243)';
-    times.style.backgroundColor = 'rgb(247, 243, 243)';
-    divided.style.backgroundColor = 'rgb(247, 243, 243)';
-});
+function clickHandler(number) {
+    return () => {
+        if (pressed === true) {
+            display.textContent = '';
+            pressed = false;
+        }
+        display.textContent += number;
+        plus.style.backgroundColor = 'rgb(247, 243, 243)';
+        minus.style.backgroundColor = 'rgb(247, 243, 243)';
+        times.style.backgroundColor = 'rgb(247, 243, 243)';
+        divided.style.backgroundColor = 'rgb(247, 243, 243)';
+    };
+}
 
-two.addEventListener('click', () => {
-    if (pressed === true) {
-        display.textContent = '';
-        pressed = false;
-    }
-    display.textContent += '2';
-    plus.style.backgroundColor = 'rgb(247, 243, 243)';
-    minus.style.backgroundColor = 'rgb(247, 243, 243)';
-    times.style.backgroundColor = 'rgb(247, 243, 243)';
-    divided.style.backgroundColor = 'rgb(247, 243, 243)';
-});
-
-three.addEventListener('click', () => {
-    if (pressed === true) {
-        display.textContent = '';
-        pressed = false;
-    }
-    display.textContent += '3';
-    plus.style.backgroundColor = 'rgb(247, 243, 243)';
-    minus.style.backgroundColor = 'rgb(247, 243, 243)';
-    times.style.backgroundColor = 'rgb(247, 243, 243)';
-    divided.style.backgroundColor = 'rgb(247, 243, 243)';
-});
-
-four.addEventListener('click', () => {
-    if (pressed === true) {
-        display.textContent = '';
-        pressed = false;
-    }
-    display.textContent += '4';
-    plus.style.backgroundColor = 'rgb(247, 243, 243)';
-    minus.style.backgroundColor = 'rgb(247, 243, 243)';
-    times.style.backgroundColor = 'rgb(247, 243, 243)';
-    divided.style.backgroundColor = 'rgb(247, 243, 243)';
-});
-
-five.addEventListener('click', () => {
-    if (pressed === true) {
-        display.textContent = '';
-        pressed = false;
-    }
-    display.textContent += '5';
-    plus.style.backgroundColor = 'rgb(247, 243, 243)';
-    minus.style.backgroundColor = 'rgb(247, 243, 243)';
-    times.style.backgroundColor = 'rgb(247, 243, 243)';
-    divided.style.backgroundColor = 'rgb(247, 243, 243)';
-});
-
-six.addEventListener('click', () => {
-    if (pressed === true) {
-        display.textContent = '';
-        pressed = false;
-    }
-    display.textContent += '6';
-    plus.style.backgroundColor = 'rgb(247, 243, 243)';
-    minus.style.backgroundColor = 'rgb(247, 243, 243)';
-    times.style.backgroundColor = 'rgb(247, 243, 243)';
-    divided.style.backgroundColor = 'rgb(247, 243, 243)';
-});
-
-seven.addEventListener('click', () => {
-    if (pressed === true) {
-        display.textContent = '';
-        pressed = false;
-    }
-    display.textContent += '7';
-    plus.style.backgroundColor = 'rgb(247, 243, 243)';
-    minus.style.backgroundColor = 'rgb(247, 243, 243)';
-    times.style.backgroundColor = 'rgb(247, 243, 243)';
-    divided.style.backgroundColor = 'rgb(247, 243, 243)';
-});
-
-eight.addEventListener('click', () => {
-    if (pressed === true) {
-        display.textContent = '';
-        pressed = false;
-    }
-    display.textContent += '8';
-    plus.style.backgroundColor = 'rgb(247, 243, 243)';
-    minus.style.backgroundColor = 'rgb(247, 243, 243)';
-    times.style.backgroundColor = 'rgb(247, 243, 243)';
-    divided.style.backgroundColor = 'rgb(247, 243, 243)';
-});
-
-nine.addEventListener('click', () => {
-    if (pressed === true) {
-        display.textContent = '';
-        pressed = false;
-    }
-    display.textContent += '9';
-    plus.style.backgroundColor = 'rgb(247, 243, 243)';
-    minus.style.backgroundColor = 'rgb(247, 243, 243)';
-    times.style.backgroundColor = 'rgb(247, 243, 243)';
-    divided.style.backgroundColor = 'rgb(247, 243, 243)';
-});
-
-zero.addEventListener('click', () => {
-    if (pressed === true) {
-        display.textContent = '';
-        pressed = false;
-    }
-    display.textContent += '0';
-    plus.style.backgroundColor = 'rgb(247, 243, 243)';
-    minus.style.backgroundColor = 'rgb(247, 243, 243)';
-    times.style.backgroundColor = 'rgb(247, 243, 243)';
-    divided.style.backgroundColor = 'rgb(247, 243, 243)';
-});
+one.addEventListener('click', clickHandler('1'));
+two.addEventListener('click', clickHandler('2'));
+three.addEventListener('click', clickHandler('3'));
+four.addEventListener('click', clickHandler('4'));
+five.addEventListener('click', clickHandler('5'));
+six.addEventListener('click', clickHandler('6'));
+seven.addEventListener('click', clickHandler('7'));
+eight.addEventListener('click', clickHandler('8'));
+nine.addEventListener('click', clickHandler('9'));
+zero.addEventListener('click', clickHandler('0'));
 
 const add = function(num1, num2) {
     result = num1 + num2;
